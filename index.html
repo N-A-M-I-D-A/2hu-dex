@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Touhou Dex</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="dex-shell">
+    <section class="character-panel" aria-live="polite">
+      <div class="character-art-wrap">
+        <img id="characterImage" class="character-art" src="" alt="">
+        <div id="imageFallback" class="image-fallback">Image path ready</div>
+      </div>
+
+      <div class="character-details">
+        <p id="characterNumber" class="character-number"></p>
+        <h1 id="characterName">Select a character</h1>
+        <p id="characterTitle" class="character-title"></p>
+
+        <dl class="detail-grid">
+          <div>
+            <dt>Race</dt>
+            <dd id="characterRace">-</dd>
+          </div>
+          <div>
+            <dt>Lives In</dt>
+            <dd id="characterHome">-</dd>
+          </div>
+          <div>
+            <dt>First Game</dt>
+            <dd id="characterGame">-</dd>
+          </div>
+          <div>
+            <dt>Role</dt>
+            <dd id="characterRole">-</dd>
+          </div>
+          <div>
+            <dt>Origin Type</dt>
+            <dd id="characterOrigin">-</dd>
+          </div>
+          <div>
+            <dt>Era</dt>
+            <dd id="characterEra">-</dd>
+          </div>
+        </dl>
+
+        <section class="chips-section">
+          <h2>Common Ships</h2>
+          <div id="characterShips" class="chip-list"></div>
+        </section>
+
+        <section class="notes-section">
+          <h2>Notes</h2>
+          <p id="characterNotes"></p>
+        </section>
+      </div>
+    </section>
+
+    <aside class="browser-panel">
+      <div class="browser-header">
+        <div>
+          <p class="eyebrow">Gensokyo Field Index</p>
+          <h2>Touhou Dex</h2>
+        </div>
+        <span id="resultCount" class="result-count">0</span>
+      </div>
+
+      <label class="search-box" for="searchInput">
+        <span>Search</span>
+        <input id="searchInput" type="search" placeholder="Name, race, home, ship...">
+      </label>
+
+      <div class="controls-grid">
+        <label>
+          Race
+          <select id="raceFilter"></select>
+        </label>
+        <label>
+          Lives In
+          <select id="homeFilter"></select>
+        </label>
+        <label>
+          Appearance
+          <select id="gameFilter"></select>
+        </label>
+        <label>
+          Stage Role
+          <select id="roleFilter"></select>
+        </label>
+        <label>
+          Origin Type
+          <select id="originFilter"></select>
+        </label>
+        <label>
+          Era
+          <select id="eraFilter"></select>
+        </label>
+        <label class="wide-control">
+          Commonly Shipped With
+          <select id="shipFilter"></select>
+        </label>
+        <label class="wide-control">
+          Sort
+          <select id="sortSelect">
+            <option value="appearance">Order of appearance</option>
+            <option value="name">Name A-Z</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="control-actions">
+        <button id="clearFilters" type="button">Clear filters</button>
+      </div>
+
+      <div id="characterList" class="character-list" role="listbox" aria-label="Touhou characters"></div>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
